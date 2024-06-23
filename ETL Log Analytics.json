@@ -1,0 +1,477 @@
+{
+  "properties": {
+    "lenses": {
+      "0": {
+        "order": 0,
+        "parts": {
+          "0": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "colSpan": 4,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "resourceTypeMode",
+                  "isOptional": true
+                },
+                {
+                  "name": "ComponentId",
+                  "isOptional": true
+                },
+                {
+                  "name": "Scope",
+                  "value": {
+                    "resourceIds": [
+                      "/subscriptions/9e262334-1344-41a1-bbf5-21931de3e122/resourcegroups/etl_resource_group/providers/microsoft.operationalinsights/workspaces/zingmindloganalytics"
+                    ]
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "PartId",
+                  "value": "1439e948-3244-4c5a-845b-047a8129affd",
+                  "isOptional": true
+                },
+                {
+                  "name": "Version",
+                  "value": "2.0",
+                  "isOptional": true
+                },
+                {
+                  "name": "TimeRange",
+                  "value": "2024-05-01T06:48:18.000Z/2024-05-17T06:48:18.526Z",
+                  "isOptional": true
+                },
+                {
+                  "name": "DashboardId",
+                  "isOptional": true
+                },
+                {
+                  "name": "DraftRequestParameters",
+                  "isOptional": true
+                },
+                {
+                  "name": "Query",
+                  "value": "ADFPipelineRun\n| where Status in (\"Failed\", \"Succeeded\", \"InProgress\")\n| summarize PipelineRunCount = count() by Status, PipelineName \n| project Status, PipelineName, PipelineRunCount\n| render piechart\n\n",
+                  "isOptional": true
+                },
+                {
+                  "name": "ControlType",
+                  "value": "FrameControlChart",
+                  "isOptional": true
+                },
+                {
+                  "name": "SpecificChart",
+                  "value": "Pie",
+                  "isOptional": true
+                },
+                {
+                  "name": "PartTitle",
+                  "value": "Analytics",
+                  "isOptional": true
+                },
+                {
+                  "name": "PartSubTitle",
+                  "value": "zingmindloganalytics",
+                  "isOptional": true
+                },
+                {
+                  "name": "Dimensions",
+                  "value": {
+                    "xAxis": {
+                      "name": "Status",
+                      "type": "string"
+                    },
+                    "yAxis": [
+                      {
+                        "name": "PipelineRunCount",
+                        "type": "long"
+                      }
+                    ],
+                    "splitBy": [],
+                    "aggregation": "Sum"
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "LegendOptions",
+                  "value": {
+                    "isEnabled": true,
+                    "position": "Bottom"
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "IsQueryContainTimeRange",
+                  "value": false,
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/Microsoft_OperationsManagementSuite_Workspace/PartType/LogsDashboardPart",
+              "settings": {
+                "content": {
+                  "PartTitle": "OverAllDataStatus"
+                }
+              }
+            }
+          },
+          "1": {
+            "position": {
+              "x": 4,
+              "y": 0,
+              "colSpan": 4,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "resourceTypeMode",
+                  "isOptional": true
+                },
+                {
+                  "name": "ComponentId",
+                  "isOptional": true
+                },
+                {
+                  "name": "Scope",
+                  "value": {
+                    "resourceIds": [
+                      "/subscriptions/9e262334-1344-41a1-bbf5-21931de3e122/resourcegroups/etl_resource_group/providers/microsoft.operationalinsights/workspaces/zingmindloganalytics"
+                    ]
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "PartId",
+                  "value": "127f9ecd-81b2-459e-8b13-f0e8dde15071",
+                  "isOptional": true
+                },
+                {
+                  "name": "Version",
+                  "value": "2.0",
+                  "isOptional": true
+                },
+                {
+                  "name": "TimeRange",
+                  "value": "2024-05-01T07:39:31.000Z/2024-05-17T07:39:31.740Z",
+                  "isOptional": true
+                },
+                {
+                  "name": "DashboardId",
+                  "isOptional": true
+                },
+                {
+                  "name": "DraftRequestParameters",
+                  "isOptional": true
+                },
+                {
+                  "name": "Query",
+                  "value": "//Scenario: You want to be alerted when a pipeline run exceeds a certain duration.\nADFPipelineRun\n| where Status == \"InProgress\"\n| extend PipelineRunDurationMinutes = toint(End - Start)  // Convert duration to minutes\n| summarize MaxDurationMinutes = max(PipelineRunDurationMinutes) by PipelineName\n| render areachart\n\n",
+                  "isOptional": true
+                },
+                {
+                  "name": "ControlType",
+                  "value": "AnalyticsGrid",
+                  "isOptional": true
+                },
+                {
+                  "name": "SpecificChart",
+                  "isOptional": true
+                },
+                {
+                  "name": "PartTitle",
+                  "value": "Analytics",
+                  "isOptional": true
+                },
+                {
+                  "name": "PartSubTitle",
+                  "value": "zingmindloganalytics",
+                  "isOptional": true
+                },
+                {
+                  "name": "Dimensions",
+                  "isOptional": true
+                },
+                {
+                  "name": "LegendOptions",
+                  "isOptional": true
+                },
+                {
+                  "name": "IsQueryContainTimeRange",
+                  "value": false,
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/Microsoft_OperationsManagementSuite_Workspace/PartType/LogsDashboardPart",
+              "settings": {
+                "content": {
+                  "Query": "ADFPipelineRun\n| where Status == \"InProgress\"\n| extend PipelineRunDurationMinutes = datetime_diff('minute',datetime_utc_to_local(now(), 'Asia/Kolkata'), Start )\n // Convert duration to minutes\n| summarize by PipelineName, PipelineRunDurationMinutes  \n//| extend MaxDuration = datetime_utc_to_local(now(), 'Asia/Kolkata')\n\n",
+                  "ControlType": "AnalyticsGrid",
+                  "SpecificChart": "StackedColumn",
+                  "PartTitle": "LongRunningPipeline",
+                  "Dimensions": {
+                    "xAxis": {
+                      "name": "PipelineName",
+                      "type": "string"
+                    },
+                    "yAxis": [
+                      {
+                        "name": "MaxDurationMinutes",
+                        "type": "int"
+                      }
+                    ],
+                    "splitBy": [],
+                    "aggregation": "Sum"
+                  },
+                  "LegendOptions": {
+                    "isEnabled": true,
+                    "position": "Bottom"
+                  }
+                }
+              }
+            }
+          },
+          "2": {
+            "position": {
+              "x": 8,
+              "y": 0,
+              "colSpan": 4,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "resourceTypeMode",
+                  "isOptional": true
+                },
+                {
+                  "name": "ComponentId",
+                  "isOptional": true
+                },
+                {
+                  "name": "Scope",
+                  "value": {
+                    "resourceIds": [
+                      "/subscriptions/9e262334-1344-41a1-bbf5-21931de3e122/resourcegroups/etl_resource_group/providers/microsoft.operationalinsights/workspaces/zingmindloganalytics"
+                    ]
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "PartId",
+                  "value": "7ef5cfca-5c8a-4232-8395-1120235724b9",
+                  "isOptional": true
+                },
+                {
+                  "name": "Version",
+                  "value": "2.0",
+                  "isOptional": true
+                },
+                {
+                  "name": "TimeRange",
+                  "value": "2024-05-01T07:58:06.000Z/2024-05-17T07:58:06.067Z",
+                  "isOptional": true
+                },
+                {
+                  "name": "DashboardId",
+                  "isOptional": true
+                },
+                {
+                  "name": "DraftRequestParameters",
+                  "isOptional": true
+                },
+                {
+                  "name": "Query",
+                  "value": "//Scenario: You want to be notified whenever the status of a pipeline run changes.\nADFPipelineRun\n| summarize arg_max(TimeGenerated, *) by RunId\n| extend StatusChange = case(\n    Status == \"Failed\", \"Failed\",\n    Status == \"Succeeded\", \"Succeeded\",\n    \"Other\")\n| render columnchart \n\n",
+                  "isOptional": true
+                },
+                {
+                  "name": "ControlType",
+                  "value": "AnalyticsGrid",
+                  "isOptional": true
+                },
+                {
+                  "name": "SpecificChart",
+                  "isOptional": true
+                },
+                {
+                  "name": "PartTitle",
+                  "value": "Analytics",
+                  "isOptional": true
+                },
+                {
+                  "name": "PartSubTitle",
+                  "value": "zingmindloganalytics",
+                  "isOptional": true
+                },
+                {
+                  "name": "Dimensions",
+                  "isOptional": true
+                },
+                {
+                  "name": "LegendOptions",
+                  "isOptional": true
+                },
+                {
+                  "name": "IsQueryContainTimeRange",
+                  "value": false,
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/Microsoft_OperationsManagementSuite_Workspace/PartType/LogsDashboardPart",
+              "settings": {
+                "content": {
+                  "Query": "//Scenario: You want to be notified whenever the status of a pipeline run changes.\nADFPipelineRun\n| summarize arg_max(TimeGenerated, *) by RunId\n| where\n    Status == \"Failed\"\n| project PipelineName, Status, FailureType, TimeGenerated\n| order  by  TimeGenerated desc \n\n",
+                  "PartTitle": "PipelineError"
+                }
+              }
+            }
+          },
+          "3": {
+            "position": {
+              "x": 0,
+              "y": 4,
+              "colSpan": 12,
+              "rowSpan": 3
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "resourceTypeMode",
+                  "isOptional": true
+                },
+                {
+                  "name": "ComponentId",
+                  "isOptional": true
+                },
+                {
+                  "name": "Scope",
+                  "value": {
+                    "resourceIds": [
+                      "/subscriptions/9e262334-1344-41a1-bbf5-21931de3e122/resourcegroups/etl_resource_group/providers/microsoft.operationalinsights/workspaces/zingmindloganalytics"
+                    ]
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "PartId",
+                  "value": "10502baf-9c5a-43b6-9115-162ce672be8e",
+                  "isOptional": true
+                },
+                {
+                  "name": "Version",
+                  "value": "2.0",
+                  "isOptional": true
+                },
+                {
+                  "name": "TimeRange",
+                  "isOptional": true
+                },
+                {
+                  "name": "DashboardId",
+                  "isOptional": true
+                },
+                {
+                  "name": "DraftRequestParameters",
+                  "isOptional": true
+                },
+                {
+                  "name": "Query",
+                  "value": "ADFPipelineRun \n| where Status == \"Succeeded\"\n| extend TimeTaken = End - Start\n| summarize SuccessFrequency = count(), AvgTime = avg(TimeTaken), TimeTaken = make_list(TimeTaken) by PipelineName, Start = bin(Start, 7d)\n| extend Range_neg_20 = AvgTime * 0.8 ,//-20%\n        Range_pos_20= AvgTime * 1.2 //+20%\n| where AvgTime >= Range_neg_20 and AvgTime <= Range_pos_20\n| order by PipelineName, Start asc\n\n",
+                  "isOptional": true
+                },
+                {
+                  "name": "ControlType",
+                  "value": "AnalyticsGrid",
+                  "isOptional": true
+                },
+                {
+                  "name": "SpecificChart",
+                  "isOptional": true
+                },
+                {
+                  "name": "PartTitle",
+                  "value": "Analytics",
+                  "isOptional": true
+                },
+                {
+                  "name": "PartSubTitle",
+                  "value": "zingmindloganalytics",
+                  "isOptional": true
+                },
+                {
+                  "name": "Dimensions",
+                  "isOptional": true
+                },
+                {
+                  "name": "LegendOptions",
+                  "isOptional": true
+                },
+                {
+                  "name": "IsQueryContainTimeRange",
+                  "value": true,
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/Microsoft_OperationsManagementSuite_Workspace/PartType/LogsDashboardPart",
+              "settings": {
+                "content": {
+                  "Query": "    ADFPipelineRun \n    | where Status == \"Succeeded\"\n    | extend TimeTaken = End - Start\n    | summarize AvgTime = avg(TimeTaken) ,TimeTaken = make_list(TimeTaken),CurrentTimeTaken = arg_max(End, *) by PipelineName ,Start = bin(Start, 7d)\n    | extend Range_neg_10 = AvgTime * 0.9, // -10%\n            Range_pos_10 = AvgTime * 1.7  // +70%\n    | extend Alert = iif(AvgTime > Range_neg_10 and AvgTime < Range_pos_10, \"Within Range\", \"Out of Range\")\n    | project  PipelineName ,current_exec_time = TimeTaken1 , AvgTime , TimeTaken , CurrentTimeTaken, Range_pos_10, Range_neg_10, Alert\n\n",
+                  "PartTitle": "MinMax",
+                  "IsQueryContainTimeRange": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "model": {
+        "timeRange": {
+          "value": {
+            "relative": {
+              "duration": 24,
+              "timeUnit": 1
+            }
+          },
+          "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+        },
+        "filterLocale": {
+          "value": "en-us"
+        },
+        "filters": {
+          "value": {
+            "MsPortalFx_TimeRange": {
+              "model": {
+                "format": "utc",
+                "granularity": "auto",
+                "relative": "30d"
+              },
+              "displayCache": {
+                "name": "UTC Time",
+                "value": "Past 30 days"
+              },
+              "filteredPartIds": [
+                "StartboardPart-LogsDashboardPart-2e51147c-863f-4691-8a14-c713cf49c0c1",
+                "StartboardPart-LogsDashboardPart-340e8a8e-7a17-42ac-b41a-96f3a01ba137",
+                "StartboardPart-LogsDashboardPart-d9a1aa01-30af-4b1f-b046-1a914cdb5110",
+                "StartboardPart-LogsDashboardPart-d9a1aa01-30af-4b1f-b046-1a914cdb5287"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "ETL Log Analytics",
+  "type": "Microsoft.Portal/dashboards",
+  "location": "INSERT LOCATION",
+  "tags": {
+    "hidden-title": "ETL Log Analytics"
+  },
+  "apiVersion": "2015-08-01-preview"
+}
